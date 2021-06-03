@@ -147,7 +147,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
-       <!-- <li><a href="/"><i class="fa fa-home"></i> <span>Home</span></a></li>-->
+        <li><a href="/profile"><i class="fa fa-user"></i> <span>Profile</span></a></li>
         <li><a href="/skp"><i class="fa fa-book"></i> <span>Pengajuan Surat Keterangan</span></a></li>
         <li><a href="/kp"><i class="fa fa-book"></i> <span>Pengajuan KP</span></a></li>
         <li><a href="/pkp"><i class="fa fa-book"></i> <span>Pengajuan Pra Kp</span></a></li>

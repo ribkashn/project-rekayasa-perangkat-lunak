@@ -148,15 +148,26 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
        <!-- <li><a href="/"><i class="fa fa-home"></i> <span>Home</span></a></li>-->
-        <li><a href="/#"><i class="fa fa-book"></i> <span>Mahasiswa Bimbingan</span></a></li>
+        <li><a href="/#"><i class="fa fa-user"></i> <span>Mahasiswa Bimbingan</span></a></li>
         <li><a href="/#"><i class="fa fa-book"></i> <span>Daftar Pengujian</span></a></li>
         <li><a href="/#"><i class="fa fa-book"></i> <span>Daftar Pengajuan Ujian</span></a></li>
         <li><a href="/#"><i class="fa fa-book"></i> <span>Daftar Registrasi</span></a></li>
-        <li><a href="/verifikasi"><i class="fa fa-book"></i> <span>Verifikasi</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Verifikasi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/verifikasi_skp"><i class="fa fa-circle-o"></i> Surat Keterangan</a></li>
+            <li><a href="/verifikasi_kp"><i class="fa fa-circle-o"></i> KP</a></li>
+            <li><a href="/verifikasi_pkp"><i class="fa fa-circle-o"></i> Pra Kp</a></li>
+         </ul>
+        </li>
+
         <li><a href="/#"><i class="fa fa-book"></i> <span>Set Up Ujian</span></a></li>
         <li><a href="/#"><i class="fa fa-book"></i> <span>Set Up Batas Kp</span></a></li>
-        
-     </ul>
 
     </section>
     <!-- /.sidebar -->

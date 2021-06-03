@@ -19,22 +19,23 @@ class PkpController extends Controller
 
     public function simpan(Request $request)
     {
-        pkpModel::create([
-            'semester' => $request->semester,
-            'tahun' => $request->tahun,
-            'nim' => $request->nim,
-            'judul' => $request->judul,
-            'tools' => $request->tools,
-            'spek' => $request->spek,
-            'lembaga' => $request->lembaga,
-            'pimpinan' => $request->pimpinan,
-            'no_telp' => $request->no_telp,
-            'alamat' => $request->alamat,
-            'fax' => $request->fax,
-            'dokumen' => $request->dokumen,
-            'status_pkp' =>0,
-            'dosen_id' =>0
-        ]);
+        pkpModel::create($request->all());
+        //([
+          //  'semester' => $request->semester,
+         //   'tahun' => $request->tahun,
+         //   'nim' => $request->nim,
+         //   'judul' => $request->judul,
+         //   'tools' => $request->tools,
+         //   'spek' => $request->spek,
+         //   'lembaga' => $request->lembaga,
+          //  'pimpinan' => $request->pimpinan,
+         //   'no_telp' => $request->no_telp,
+         //   'alamat' => $request->alamat,
+         //   'fax' => $request->fax,
+         //   'dokumen' => $request->dokumen,
+        //    'status_pkp' =>0,
+        //    'dosen_id' =>0
+        //]);
         return redirect('/pkp')->with('toast_success', 'Data Berhasil Disimpan');
     }
     public function edit($id_pkp){

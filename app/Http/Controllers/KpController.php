@@ -31,6 +31,7 @@ class KpController extends Controller
 
     public function index()
     {
+        $query = $this->db->join(‘id_user’, ‘users.id = transaksi.id’);
        $data_kp = kpModel::all();
         return view('kp.kp',compact('data_kp'));
     }
@@ -41,22 +42,23 @@ class KpController extends Controller
 
     public function simpan(Request $request)
     {
-        kpModel::create([
-            'semester' => $request->semester,
-            'tahun' => $request->tahun,
-            'nim' => $request->nim,
-            'judul' => $request->judul,
-            'tools' => $request->tools,
-            'spek' => $request->spek,
-            'lembaga' => $request->lembaga,
-            'pimpinan' => $request->pimpinan,
-            'no_telp' => $request->no_telp,
-            'alamat' => $request->alamat,
-            'fax' => $request->fax,
-            'dokumen' => $request->dokumen,
-            'status_kp' =>0,
-            'dosen_id' =>0
-        ]);
+        kpModel::create($request->all());
+        //([
+        //    'semester' => $request->semester,
+        //    'tahun' => $request->tahun,
+        //    'nim' => $request->nim,
+        //    'judul' => $request->judul,
+        //    'tools' => $request->tools,
+        //    'spek' => $request->spek,
+        //    'lembaga' => $request->lembaga,
+        //    'pimpinan' => $request->pimpinan,
+        //    'no_telp' => $request->no_telp,
+        //    'alamat' => $request->alamat,
+        //    'fax' => $request->fax,
+        //    'dokumen' => $request->dokumen,
+         //   'status_kp' =>0,
+         //   'dosen_id' =>0
+        //]);
         return redirect('/kp')->with('toast_success', 'Data Berhasil Disimpan');
     }
 

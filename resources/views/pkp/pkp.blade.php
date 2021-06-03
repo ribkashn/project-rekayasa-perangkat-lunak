@@ -15,6 +15,7 @@
         <table class="table table-bordered table-striped">
             <tr>
                 <th>No</th>
+                <th>Nim</th>
                 <th>Judul</th>
                 <th>Lembaga</th>
                 <th>Status</th>
@@ -24,13 +25,16 @@
             @foreach ($data_pkp as $key)
             <tr>
                 <td>{{ $loop->iteration }}</td>
+                <td>{{ $key->nim}}</td>
                 <td>{{ $key->judul}}</td>
                 <td>{{ $key->lembaga}}</td>
                 <td>
-                    @if ($key->status_pkp == 0)
-                        Belum Disetujui
+                    @if ($key->status_skp == 1)
+                        Disetujui
+                    @elseif ($key->status_skp == 2)
+                        Tidak Disetujui
                     @else
-                        Sudah Disetujui
+                        diproses
                     @endif
                 </td>
                 <td>

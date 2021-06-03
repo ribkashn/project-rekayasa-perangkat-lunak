@@ -27,6 +27,14 @@ Route::get('/', function () {
 Route::group(['middleware' => 'mahasiswa'], function (){
 
     Route::get('/mhs',[MahasiswaController::class,'index']);//tampilkan view layout master menu mhs
+    //profile
+    Route::get('/profile',[MahasiswaController::class,'mahasiswa']);//tampilkan profile laman
+    Route::post('/mhs/simpan',[MahasiswaController::class,'simpan']);
+    Route::get('/mhs/editmhs/{id_mhs}',[MahasiswaController::class,'edit']); // edit data   
+    Route::post('/mhs/update/{id_mhs}',[MahasiswaController::class,'update']); // simpan edit  data 
+
+
+
     Route::get('/kp',[KpController::class,'index']); // tampilkan laman kp------------------
     Route::get('/kp/input',[KpController::class,'input']); // menuju laman tambah
     Route::post('/kp/simpan',[KpController::class,'simpan']); // simpan data  
@@ -56,7 +64,18 @@ Route::group(['middleware' => 'dosen'], function (){
 //Koordinator
 Route::group(['middleware' => 'koordinator'], function (){
     Route::get('/koor',[KoorController::class,'index']);
-    Route::get('/verifikasi/{id_kp}',[KoorController::class,'index_verifikasiKp']); //
+    //verif skp
+    Route::get('/verifikasi_skp',[KoorController::class,'verifikasiSKP']); // menampilkan data skp
+    Route::get('/verifikasi_skp/editskp/{id_skp}',[KoorController::class,'statusSKP']); // munculkasn form edit status
+    Route::post('/verifikasi_skp/update/{id_skp}',[KoorController::class,'update_skp']); // simpan edit  data skp  
+    //verif kp
+    Route::get('/verifikasi_kp',[KoorController::class,'verifikasiKP']); // menampilkan data kp
+    Route::get('/verifikasi_kp/editkp/{id_kp}',[KoorController::class,'statusKP']); // munculkasn form edit status
+    Route::post('/verifikasi_kp/update/{id_kp}',[KoorController::class,'update_kp']); // simpan edit  data kp  
+
+    Route::get('/verifikasi_pkp',[KoorController::class,'verifikasiPKP']); //
+    Route::post('/verifikasi_pkp/edit/{id_pkp}',[KoorController::class,'statusPKP']); // simpan edit  data pkp  
+    Route::post('/verifikasi_pkp/update/{id_pkp}',[KoorController::class,'update_pkp']);
 
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

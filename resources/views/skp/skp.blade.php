@@ -22,10 +22,12 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $key->lembaga}}</td>
                 <td>
-                    @if ($key->status_skp == 0)
-                        Belum Disetujui
+                    @ @if ($key->status_skp == 1)
+                        Disetujui
+                    @elseif ($key->status_skp == 2)
+                        Tidak Disetujui
                     @else
-                        Sudah Disetujui
+                        diproses
                     @endif
                 </td>
             </tr>

@@ -147,7 +147,6 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
-       <!-- <li><a href="/"><i class="fa fa-home"></i> <span>Home</span></a></li>-->
         <li><a href="/mhs"><i class="fa fa-book"></i> <span>Mahasiswa</span></a></li>
         <li><a href="/koor"><i class="fa fa-book"></i> <span>Koordinator</span></a></li>
         <li><a href="/dsn"><i class="fa fa-book"></i> <span>Dosen</span></a></li>
