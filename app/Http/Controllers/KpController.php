@@ -31,7 +31,6 @@ class KpController extends Controller
 
     public function index()
     {
-        $query = $this->db->join(‘id_user’, ‘users.id = transaksi.id’);
        $data_kp = kpModel::all();
         return view('kp.kp',compact('data_kp'));
     }

@@ -69,7 +69,7 @@ class KoorController extends Controller
     public function statusPKP($id_pkp) //edit
     {
         $data_pkp = pkpModel::findorfail($id_pkp);
-        return view('verifikasi.pkp',compact('data_pkp'));
+        return view('verifikasi.edit_pkp',compact('data_pkp'));
     }
 
     public function update_pkp(Request $request, $id_pkp) // update status baru
@@ -77,8 +77,101 @@ class KoorController extends Controller
         $data_pkp = pkpModel::findorfail($id_pkp);
         $data_pkp->update($request->all());
         return redirect('/verifikasi_pkp')->with('toast_success', 'Data Berhasil Diubah');
+    }
 
+    
+    ///// batas kp
+    public function batas_kp ()
+    {
+        
+        $data_kp = kpModel::where('status_kp','=','1')->get();
+        //$data_kp = kpModel::where('status_ujian','=','1')->get();
+        return view('set_up.batas_kp',compact('data_kp'));
+    }
+    public function setKP($id_kp) //edit
+    {
+        $data_kp = kpModel::findorfail($id_kp);
+        return view('set_up.edit_kp',compact('data_kp'));
+    }
 
+    public function update_setkp(Request $request, $id_kp) // update status baru
+    {
+        $data_kp = kpModel::findorfail($id_kp);
+        $data_kp->update($request->all());
+        return redirect('/batas_kp')->with('toast_success', 'Data Berhasil Diubah');
+
+    }
+    //// batas pkp
+    public function batas_pkp ()
+    {
+        
+        $data_pkp = pkpModel::where('status_pkp','=','1')->get();
+        //$data_pkp = pkpModel::where('status_ujian','=','1')->get();
+        return view('set_up.batas_pkp',compact('data_pkp'));
+    }
+    public function setPKP($id_pkp) //edit
+    {
+        $data_pkp = pkpModel::findorfail($id_pkp);
+        return view('set_up.edit_pkp',compact('data_pkp'));
+    }
+
+    public function update_setpkp(Request $request, $id_pkp) // update status baru
+    {
+        $data_pkp = pkpModel::findorfail($id_pkp);
+        $data_pkp->update($request->all());
+        return redirect('/batas_pkp')->with('toast_success', 'Data Berhasil Diubah');
+
+    }
+    // jadwal ujian kp
+    public function ujianKP()
+    {
+        $data_kp = kpModel::where('status_ujian','=','1')->get();
+        
+        return view('jadwal_ujian.ujian_kp', compact('data_kp'));
+    }
+    public function edit_ujianKP($id_kp) //edit
+    {
+        $data_kp = kpModel::findorfail($id_kp);
+        return view('jadwal_ujian.edit_kp',compact('data_kp'));
+    }
+
+    public function update_ujiankp(Request $request, $id_kp) // update status baru
+    {
+        $data_kp = kpModel::findorfail($id_kp);
+        $data_kp->update($request->all());
+        return redirect('/ujian_kp')->with('toast_success', 'Data Berhasil Diubah');
+
+    }
+    // jadwal ujian pkp
+    public function ujianPKP()
+    {
+        $data_pkp = pkpModel::where('status_ujian','=','1')->get();
+        
+        return view('jadwal_ujian.ujian_pkp', compact('data_pkp'));
+    }
+    public function edit_ujianPKP($id_pkp) //edit
+    {
+        $data_pkp = pkpModel::findorfail($id_pkp);
+        return view('jadwal_ujian.edit_pkp',compact('data_pkp'));
+    }
+
+    public function update_ujianpkp(Request $request, $id_pkp) // update status baru
+    {
+        $data_pkp = pkpModel::findorfail($id_pkp);
+        $data_pkp->update($request->all());
+        return redirect('/ujian_pkp')->with('toast_success', 'Data Berhasil Diubah');
+
+    }
+    // registrasi
+    public function regis_kp()
+    {
+        $data_kp = kpModel::where('status_kp','=','1')->get();
+        return view('registrasi.kp', compact('data_kp'));
+    }
+    public function regis_pkp()
+    {
+        $data_pkp = pkpModel::where('status_pkp','=','1')->get();
+        return view('registrasi.pkp', compact('data_pkp'));
     }
 
 }

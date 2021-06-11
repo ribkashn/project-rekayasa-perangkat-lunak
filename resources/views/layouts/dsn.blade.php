@@ -18,6 +18,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="{{asset('template')}}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -148,9 +149,8 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
        <!-- <li><a href="/"><i class="fa fa-home"></i> <span>Home</span></a></li>-->
-        <li><a href="/#"><i class="fa fa-book"></i> <span>Mahasiswa Bimbingan</span></a></li>
-        <li><a href="/#"><i class="fa fa-book"></i> <span>Daftar Pengujian</span></a></li>
-        <li><a href="/#"><i class="fa fa-book"></i> <span>Daftar Pengajuan Ujian</span></a></li>
+        <li><a href="/kp_bimbingan"><i class="fa fa-book"></i> <span>Daftar Bimbingan</span></a></li>
+        <li><a href="/daf_ujian_kp"><i class="fa fa-book"></i> <span>Jadwal Ujian</span></a></li>
         
      </ul>
 
@@ -175,6 +175,12 @@
     </section>
     <!-- /.content -->
   </div>
+  <footer class="main-footer">
+  <div class="pull-right hidden-xs">
+     <b>By</b> Ribka | Dito | Ruendi
+  </div>
+    <strong>Copyright &copy; 2021 </strong> RPL jaya
+  </footer>
   <!-- /.content-wrapper -->
 
 
@@ -197,9 +203,15 @@
 <script src="{{asset('template')}}/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('template')}}/dist/js/demo.js"></script>
+<script src="{{asset('template')}}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
+    $("#jadwal").datepicker({
+      format: 'yyyy/mm/dd',
+      todayHighlight: true,
+      autoclose: true
+    })
   })
 </script>
 </body>

@@ -34,6 +34,10 @@
             <input type="text" class="form-control " name="nim" id="nim" value="{{ $data_pkp->nim }}">
         </div>
         <div class="form-group">
+            <label for="" class="font-weight-bold">Nama</label>
+            <input type="text" class="form-control " name="nama" id="nama" value="{{ $data_pkp->nama }}">
+        </div>
+        <div class="form-group">
             <label for="" class="font-weight-bold">Judul Kerja Praktik</label>
             <textarea name="judul" id="" cols="30" rows="3" class="form-control " name="judul" id="judul" value="{{ $data_pkp->judul }}"></textarea>
         </div>

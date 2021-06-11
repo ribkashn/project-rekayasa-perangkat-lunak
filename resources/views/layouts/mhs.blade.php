@@ -19,6 +19,8 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
 
+  <link rel="stylesheet" href="{{asset('template')}}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -151,7 +153,7 @@
         <li><a href="/skp"><i class="fa fa-book"></i> <span>Pengajuan Surat Keterangan</span></a></li>
         <li><a href="/kp"><i class="fa fa-book"></i> <span>Pengajuan KP</span></a></li>
         <li><a href="/pkp"><i class="fa fa-book"></i> <span>Pengajuan Pra Kp</span></a></li>
-        <li><a href="/ujian"><i class="fa fa-book"></i> <span>Jadwal Ujian</span></a></li>
+        <li><a href="/kp_ujian"><i class="fa fa-book"></i> <span>Jadwal Ujian</span></a></li>
         
      </ul>
 
@@ -176,6 +178,12 @@
     </section>
     <!-- /.content -->
   </div>
+  <footer class="main-footer">
+  <div class="pull-right hidden-xs">
+     <b>By</b> Ribka | Dito | Ruendi
+  </div>
+    <strong>Copyright &copy; 2021 </strong> RPL jaya
+  </footer>
   <!-- /.content-wrapper -->
 
 

@@ -9,5 +9,5 @@ class skpModel extends Model
 {
     protected $table = "suratkp";
     protected $primaryKey = 'id_skp';
-    protected $fillable = ['semester','tahun','nim','lembaga','pimpinan','no_telp','alamat','fax','dokumen','status_skp'];
+    protected $fillable = ['semester','tahun','nim','lembaga','pimpinan','no_telp','alamat','fax','dokumen','status_skp','nama'];
 }

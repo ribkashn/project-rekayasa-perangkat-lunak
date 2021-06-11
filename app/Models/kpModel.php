@@ -9,6 +9,7 @@ class kpModel extends Model
 {
     protected $table = "kp";
     protected $primaryKey = 'id_kp';
-    protected $fillable = ['semester','tahun','nim','judul','tools','spek','lembaga','pimpinan','no_telp','alamat','fax','dokumen','status_kp','dosen_id'];
+    protected $fillable = ['semester','tahun','nim','judul','tools','spek','lembaga','pimpinan','no_telp','alamat','fax','dokumen','status_kp','dosen_id','jadwal',
+    'status_ujian','ruangan','batas_awal','batas_akhir','nama'];
 
 }

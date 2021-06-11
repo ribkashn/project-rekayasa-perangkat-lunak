@@ -9,7 +9,7 @@
       </div>
   @endif
   <div class="card card-info card-outline">
-    <h3>Verifikasi Surat Keterangan</h3>
+    <h3>Verifikasi Kp</h3>
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <tr>
@@ -27,11 +27,7 @@
                     <td>{{ $key->nim}}</td>
                     <td>{{ $key->lembaga}}</td>
                     <td>{{ $key->judul}}</td>
-                    <td>@if ($key->dosen_id == 0)
-                            -
-                        @else
-                            {{$key->dosen_id}}
-                        @endif
+                    <td>
                     </td>
                     <td>@if ($key->status_kp == 1)
                             Disetujui

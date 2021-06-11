@@ -19,7 +19,7 @@
                 <th>Judul</th>
                 <th>Lembaga</th>
                 <th>Status</th>
-                <th>Pembimbing</th>
+                
                 <th>Aksi</th>
             </tr>
             @foreach ($data_pkp as $key)
@@ -30,22 +30,16 @@
                 <td>{{ $key->lembaga}}</td>
                 <td>
                     @if ($key->status_skp == 1)
-                        Disetujui
+                        Diterima
                     @elseif ($key->status_skp == 2)
-                        Tidak Disetujui
+                        Ditolak
                     @else
-                        diproses
+                        Belum Diverifikasi
                     @endif
                 </td>
+              
                 <td>
-                    @if ($key->dosen_id == 0)
-                        -
-                    @else
-                        {{$key->dosen_id}}
-                    @endif
-                </td>
-                <td>
-                <a href="/pkp/editpkp/{{$key->id_pkp}}" class="btn btn-success">Edit</a> | <a href="/pkp/deletepkp/{{$key->id_pkp}}" class="btn btn-danger">Hapus</i>
+                <a href="/pkp/editpkp/{{$key->id_pkp}}" class="btn btn-success">Edit</a> | <!-- <a href="/pkp/deletepkp/{{$key->id_pkp}}" class="btn btn-danger">Hapus</i> -->
                 </td>
             </tr>
             @endforeach       
